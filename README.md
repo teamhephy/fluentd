@@ -11,7 +11,7 @@ a lightweight, [Heroku-inspired](http://heroku.com) workflow.
 ## About
 This is an centos7 based image for running [fluentd](http://fluentd.org). It is built for the purpose of running on a kubernetes cluster.
 
-This work is based on the [docker-fluentd](https://github.com/fabric8io/docker-fluentd) and [docker-fluentd-kubernetes](https://github.com/fabric8io/docker-fluentd-kubernetes) images by the fabric8 team. This image is in with [deis](https://github.com/deis/deis) v2 to send all log data to the [logger](https://github.com/deis/logger) component.
+This work is based on the [docker-fluentd](https://github.com/fabric8io/docker-fluentd) and [docker-fluentd-kubernetes](https://github.com/fabric8io/docker-fluentd-kubernetes) images by the fabric8 team. This image is in with [deis](https://github.com/deisthree/deis) v2 to send all log data to the [logger](https://github.com/deisthree/logger) component.
 
 ## Configuration
 
@@ -119,4 +119,4 @@ To configure your custom plugins, use either the CUSTOM_STORE_# or CUSTOM_FILTER
 If you need the build tools available for installing your plugin, this can be enabled with another environment variable
 `INSTALL_BUILD_TOOLS="true"`
 
-[v2.18]: https://github.com/deis/workflow/releases/tag/v2.18.0
+[v2.18]: https://github.com/deisthree/workflow/releases/tag/v2.18.0

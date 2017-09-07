@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["engineering@deis.com"]
   gem.description   = %q{Fluentd output plugin for sending data to Deis Components }
   gem.summary       = %q{Fluentd output plugin for sending data to Deis Components}
-  gem.homepage      = "https://github.com/deis/fluentd"
+  gem.homepage      = "https://github.com/deisthree/fluentd"
   gem.license       = "ASL2"
 
   gem.files         = Dir.glob("{lib}/**/*") + %w(LICENSE README.md)
