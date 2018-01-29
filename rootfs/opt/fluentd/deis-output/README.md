@@ -1,10 +1,10 @@
 # Deis Fluentd plugin
 Deis (pronounced DAY-iss) Workflow is an open source Platform as a Service (PaaS) that adds a developer-friendly layer to any [Kubernetes](http://kubernetes.io) cluster, making it easy to deploy and manage applications on your own servers.
 
-For more information about the Deis Workflow, please visit the main project page at https://github.com/deisthree/workflow.
+For more information about the Deis Workflow, please visit the main project page at https://github.com/teamhephy/workflow.
 
 ## About
-[Fluentd](http://www.fluentd.org/) is an integral part of the [Deis Workflow](https://github.com/deisthree/workflow) stack. It is responsible for consuming all of the log data produced by the Kuberenetes cluster. This includes the kubernetes components, Workflow components, and user deployed applications. This plugin takes that log data and will forward it to the appropriate Workflow components.
+[Fluentd](http://www.fluentd.org/) is an integral part of the [Deis Workflow](https://github.com/teamhephy/workflow) stack. It is responsible for consuming all of the log data produced by the Kuberenetes cluster. This includes the kubernetes components, Workflow components, and user deployed applications. This plugin takes that log data and will forward it to the appropriate Workflow components.
 
 ## License
 
