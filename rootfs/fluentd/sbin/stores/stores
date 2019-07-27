@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /fluentd/sbin/stores/deis
+source /fluentd/sbin/stores/elastic_search
+source /fluentd/sbin/stores/syslog
+source /fluentd/sbin/stores/sumologic
+source /fluentd/sbin/stores/custom_stores
+source /fluentd/sbin/stores/gelf
