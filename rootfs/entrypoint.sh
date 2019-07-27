@@ -1,3 +1,3 @@
-#!/usr/bin/dumb-init /bin/sh
+#!/bin/sh
 
 exec "$@"
