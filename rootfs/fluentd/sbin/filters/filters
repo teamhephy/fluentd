@@ -1,0 +1,3 @@
+#!/bin/bash
+source /fluentd/sbin/filters/kubernetes
+source /fluentd/sbin/filters/custom_filters
