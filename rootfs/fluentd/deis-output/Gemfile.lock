@@ -63,6 +63,3 @@ DEPENDENCIES
   fluent-plugin-deis_output!
   rake (~> 10.0)
   test-unit (~> 3.1.7)
-
-BUNDLED WITH
-   1.16.1
