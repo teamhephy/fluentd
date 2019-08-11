@@ -1,5 +1,5 @@
 #!/bin/bash
-FLUENTD_CONF="/fluentd/etc/${FLUENTD_CONF}"
+FLUENTD_CONF="/fluentd/etc/fluentd.conf"
 INSTALL_BUILD_TOOLS=${INSTALL_BUILD_TOOLS:-"false"}
 BUILD_TOOLS='g++ gcc make ruby-dev'
 
