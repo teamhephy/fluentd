@@ -36,6 +36,31 @@ cat << EOF >> $FLUENTD_CONF
 EOF
 fi
 
+# If you want to ONLY  log deis router logs to elasticsearch
+# then we Gclose the previous <match> tag and create a new one
+# just for matching deis-router logs. Output would be like:
+# <match kubernetes.var.log.containers.deis-router-**.log>
+#   @type copy
+# <store>
+#   @type elasticsearch
+#   ...
+# </store>
+# </match>
+if [ -n "${ELASTICSEARCH_DEIS_ROUTER_LOGS_ONLY}" ]
+then
+cat << EOF >> $FLUENTD_CONF
+<match kubernetes.var.log.containers.deis-router-**.log>
+  @type copy
+EOF
+
+source /fluentd/sbin/stores/elastic_search
+source /fluentd/sbin/stores/stores
+
+cat << EOF >> $FLUENTD_CONF
+</match>
+EOF
+fi
+
 cat << EOF >> $FLUENTD_CONF
 <match **>
   @type copy
