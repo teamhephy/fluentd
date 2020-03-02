@@ -29,7 +29,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'yajl-ruby'
 
   gem.add_development_dependency "bundler", "~> 1.3"
-  gem.add_development_dependency "rake", "~> 10.0"
+  gem.add_development_dependency "rake", "~> 12.3"
   gem.add_development_dependency "test-unit", "~> 3.1.7"
 
 end
