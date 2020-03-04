@@ -11,7 +11,7 @@ RUN apk add --update --virtual .build-deps sudo build-base ruby-dev \
     &&  bundle install --gemfile=/fluentd/deis-output/Gemfile \
     &&  rake --rakefile=/fluentd/deis-output/Rakefile build \
     &&  fluent-gem install --no-document fluent-plugin-kubernetes_metadata_filter -v 2.1.4 \
-    &&  fluent-gem install --no-document fluent-plugin-elasticsearch -v 2.12.0 \
+    &&  fluent-gem install --no-document fluent-plugin-elasticsearch -v 4.0.4 \
     &&  fluent-gem install --no-document fluent-plugin-remote_syslog -v 1.0.0 \
     &&  fluent-gem install --no-document fluent-plugin-sumologic-mattk42 -v 0.0.4 \
     &&  fluent-gem install --no-document fluent-plugin-gelf-hs -v 1.0.7 \
