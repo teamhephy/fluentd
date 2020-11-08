@@ -10,7 +10,7 @@ module Fluent
       INFLUX_HOST = "#{ENV['DEIS_MONITOR_INFLUX_API_SERVICE_HOST']}"
       INFLUX_PORT = "#{ENV['DEIS_MONITOR_INFLUX_API_SERVICE_PORT_TRANSPORT']}"
       INFLUX_DATABASE = ENV['INFLUX_DATABASE'] || "kubernetes"
-      NSQ_URL = "#{ENV['DEIS_NSQD_SERVICE_HOST']}:#{ENV['DEIS_NSQD_SERVICE_PORT_TRANSPORT']}"
+      NSQ_URLs = "#{ENV['DEIS_NSQD_ADDRS']}".split(",")
 
       def kubernetes?(message)
         return message["kubernetes"] != nil
@@ -108,8 +108,8 @@ module Fluent
 
       def get_nsq_producer(topic)
         begin
-          puts "Creating nsq producer (#{NSQ_URL}) for topic:#{topic}"
-          return Nsq::Producer.new(nsqd: NSQ_URL, topic: topic)
+          puts "Creating nsq producer (#{NSQ_URLs}) for topic:#{topic}"
+          return Nsq::Producer.new(nsqd: NSQ_URLs, topic: topic)
         rescue Exception => e
           puts "Error:#{e.message}"
           return nil

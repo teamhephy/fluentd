@@ -1,3 +1,4 @@
+{{ $nsqdNodeCount := .Values.nsqd.replicas | int }}
 apiVersion: {{ template "APIVersion" . }}
 kind: DaemonSet
 metadata:
@@ -84,6 +85,8 @@ spec:
           - name: {{ $key }}
             value: {{ $value | quote }}
           {{- end }}
+          - name: DEIS_NSQD_ADDRS
+            value: "{{range $i := until $nsqdNodeCount}}deis-nsqd-{{$i}}.deis-nsqd.{{ $.Release.Namespace }}.svc.cluster.local:{{$.Values.nsqd.tcp_port}}{{if lt (add 1 $i) $nsqdNodeCount}},{{end}}{{end}}"
         volumeMounts:
         - name: varlog
           mountPath: /var/log

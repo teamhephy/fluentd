@@ -29,6 +29,11 @@ boot:
 daemon_environment:
   CONTAINER_TAIL_PARSER_TYPE: json
 
+nsqd:
+  replicas: 1
+  tcp_port: 4150
+  http_port: 4151
+
 # Role-Based Access Control for Kubernetes >= 1.5
 global:
-  use_rbac: false
+  use_rbac: true
