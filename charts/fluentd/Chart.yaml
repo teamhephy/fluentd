@@ -1,7 +1,7 @@
 name: fluentd
 home: https://github.com/teamhephy/fluentd
 version: <Will be populated by the ci before publishing the chart>
-description: Log shipping mechanism for Deis Workflow.
+description: Log shipping mechanism for Hephy Workflow.
 maintainers:
-  - name: Deis Team
-    email: engineering@deis.com
+  - name: Team Hephy
+    email: team@teamhephy.com

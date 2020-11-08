@@ -6,7 +6,7 @@ RUN chmod +x /bin/entrypoint.sh
 
 RUN apk add bash findutils
 RUN apk add --update --virtual .build-deps sudo build-base ruby-dev \
-    &&  gem install bundler \
+    &&  gem install bundler:1.17.3 \
     &&  bundle config --global silence_root_warning 1 \
     &&  bundle install --gemfile=/fluentd/deis-output/Gemfile \
     &&  rake --rakefile=/fluentd/deis-output/Rakefile build \
