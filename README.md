@@ -13,6 +13,12 @@ This work is based on the [docker-fluentd](https://github.com/fabric8io/docker-f
 
 ## Configuration
 
+### Support containerd log format
+By default, fluent parses logs in docker json format. If you use containerd, you only need to set the following environment variables
+
+* `CONTAINER_TAIL_PARSER_TYPE="/^(?<time>.+) (?<stream>stdout|stderr)( (?<tags>.))? (?<log>.*)$/"`
+
+
 ### Enable more verbose logging
 By default we do not capture kubernetes system logs. However, it is possible to tell fluentd to capture those logs just by specifying a few new environment variables.
 
