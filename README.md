@@ -1,12 +1,10 @@
 
 ## Description
-[![Build Status](https://ci.deis.io/job/fluentd/badge/icon)](https://ci.deis.io/job/fluentd)
+[![Build Status](https://api.travis-ci.org/teamhephy/fluentd.svg?branch=master)](https://travis-ci.org/github/teamhephy/fluentd)
 
 Deis (pronounced DAY-iss) is an open source PaaS that makes it easy to deploy and manage
 applications on your own servers. Deis builds on [Kubernetes](http://kubernetes.io/) to provide
 a lightweight, [Heroku-inspired](http://heroku.com) workflow.
-
-![Deis Graphic](https://getdeis.blob.core.windows.net/get-deis/deis-graphic-small.png)
 
 ## About
 This is an centos7 based image for running [fluentd](http://fluentd.org). It is built for the purpose of running on a kubernetes cluster.
