@@ -1,12 +1,10 @@
 
 ## Description
-[![Build Status](https://ci.deis.io/job/fluentd/badge/icon)](https://ci.deis.io/job/fluentd)
+[![Build Status](https://api.travis-ci.org/teamhephy/fluentd.svg?branch=master)](https://travis-ci.org/github/teamhephy/fluentd)
 
 Deis (pronounced DAY-iss) is an open source PaaS that makes it easy to deploy and manage
 applications on your own servers. Deis builds on [Kubernetes](http://kubernetes.io/) to provide
 a lightweight, [Heroku-inspired](http://heroku.com) workflow.
-
-![Deis Graphic](https://getdeis.blob.core.windows.net/get-deis/deis-graphic-small.png)
 
 ## About
 This is an centos7 based image for running [fluentd](http://fluentd.org). It is built for the purpose of running on a kubernetes cluster.
@@ -14,6 +12,12 @@ This is an centos7 based image for running [fluentd](http://fluentd.org). It is 
 This work is based on the [docker-fluentd](https://github.com/fabric8io/docker-fluentd) and [docker-fluentd-kubernetes](https://github.com/fabric8io/docker-fluentd-kubernetes) images by the fabric8 team. This image is in with [deis](https://github.com/teamhephy/deis) v2 to send all log data to the [logger](https://github.com/teamhephy/logger) component.
 
 ## Configuration
+
+### Support containerd log format
+By default, fluent parses logs in docker json format. If you use containerd, you only need to set the following environment variables
+
+* `CONTAINER_TAIL_PARSER_TYPE="/^(?<time>.+) (?<stream>stdout|stderr)( (?<tags>.))? (?<log>.*)$/"`
+
 
 ### Enable more verbose logging
 By default we do not capture kubernetes system logs. However, it is possible to tell fluentd to capture those logs just by specifying a few new environment variables.

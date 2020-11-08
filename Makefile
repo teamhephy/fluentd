@@ -1,7 +1,7 @@
 SHORT_NAME ?= fluentd
 BUILD_TAG ?= git-$(shell git rev-parse --short HEAD)
-DEIS_REGISTRY ?= ${DEV_REGISTRY}
-IMAGE_PREFIX ?= deis
+HEPHY_REGISTRY ?= ${DEV_REGISTRY}
+IMAGE_PREFIX ?= hephy
 
 include versioning.mk
 
