@@ -13,7 +13,7 @@ docker-build:
 	docker tag ${IMAGE} ${MUTABLE_IMAGE}
 
 test: docker-build
-	docker run ${IMAGE} /bin/bash -c "cd /fluentd/hephy-output && rake test"
+	docker run ${IMAGE} /bin/bash -c "cd /fluentd/deis-output && rake test"
 
 install:
 	helm upgrade fluentd charts/fluentd --install --namespace deis --set org=${IMAGE_PREFIX},docker_tag=${VERSION}

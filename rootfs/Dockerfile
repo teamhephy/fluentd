@@ -1,4 +1,6 @@
-FROM fluent/fluentd:v1.3
+FROM fluent/fluentd:v1.4
+
+USER root
 
 COPY fluentd /fluentd
 COPY entrypoint.sh /bin/
@@ -15,7 +17,7 @@ RUN apk add --update --virtual .build-deps sudo build-base ruby-dev \
     &&  fluent-gem install --no-document fluent-plugin-remote_syslog -v 1.0.0 \
     &&  fluent-gem install --no-document fluent-plugin-sumologic-mattk42 -v 0.0.4 \
     &&  fluent-gem install --no-document fluent-plugin-gelf-hs -v 1.0.7 \
-    &&  fluent-gem install --no-document influxdb -v 0.6.1 \
+    &&  fluent-gem install --no-document influxdb -v 0.7.0 \
     &&  fluent-gem install --no-document nsq-ruby -v 2.3.1 \
     &&  fluent-gem install --local /fluentd/deis-output/pkg/fluent-plugin-deis_output-0.1.0.gem \
     &&  sudo gem sources --clear-all \
