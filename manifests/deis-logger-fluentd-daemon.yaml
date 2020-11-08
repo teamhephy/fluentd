@@ -20,7 +20,7 @@ spec:
       serviceAccount: deis-logger-fluentd
       containers:
       - name: deis-logger-fluentd
-        image: quay.io/deisci/fluentd:canary
+        image: hephy/fluentd:canary
         imagePullPolicy: Always
         volumeMounts:
         - name: varlog
