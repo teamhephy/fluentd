@@ -5,6 +5,7 @@ USER root
 COPY fluentd /fluentd
 COPY entrypoint.sh /bin/
 RUN chmod +x /bin/entrypoint.sh
+ENV FLUENTD_CONF="/fluentd/etc/fluent.conf"
 
 RUN apk add bash findutils \
     && apk add --update --virtual .build-deps sudo build-base ruby-dev \
