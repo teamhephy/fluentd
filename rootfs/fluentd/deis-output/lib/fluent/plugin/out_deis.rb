@@ -17,8 +17,8 @@ module Fluent
     config_param :tag, :string, :default => ""
     config_set_default :output_include_time, false
     config_set_default :output_include_tag, false
-    config_set_default :num_threads, 5
-    config_set_default :flush_thread_count, 5
+    config_set_default :num_threads, ENV['NUM_THREADS'] || "5"
+    config_set_default :flush_thread_count, ENV['FLUSH_THREAD_COUNT'] || "5"
 
     def initialize
       super
