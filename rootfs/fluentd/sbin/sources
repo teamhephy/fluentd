@@ -5,6 +5,7 @@ then
 cat << EOF >> $FLUENTD_CONF
 <source>
   @type tail
+  @log_level warn
   path /var/log/containers/*.log
   pos_file /var/log/containers.log.pos
   tag kubernetes.*
