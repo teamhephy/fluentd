@@ -17,6 +17,10 @@ spec:
         heritage: deis
         app: deis-logger-fluentd
     spec:
+{{- with .Values.global.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+{{- end }}
       serviceAccount: deis-logger-fluentd
       containers:
       - name: deis-logger-fluentd
